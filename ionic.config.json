@@ -1,0 +1,7 @@
+{
+  "name": "MarvelIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
