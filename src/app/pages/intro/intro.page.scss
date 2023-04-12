@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fullContent{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://www.hdwallpaperslife.com/wp-content/uploads/2018/10/spider_man_into_the_spider_verse_4k_4.jpg");
+  background-size: cover;
+  background-position: center;
+  // background: rgb(255,0,0);
+  // background: linear-gradient(144deg, rgba(255,0,0,1) 0%, rgba(0,14,255,1) 68%, rgba(0,212,255,1) 100%);
+}
+
+.container{
+  height: 400px;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  perspective: 500px;
+}
+
+.logo{
+  width: 200px;
+  height: 300px;
+  background: url(/assets/images/logoSpider.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 100px;
+  filter: drop-shadow(0px 5px 10px #ffffff);
+  animation: rotar 7s linear infinite;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+img{
+  position: absolute;
+  width: 700px;
+  top: 50px;
+  animation:blur-in-expand 1s linear both
+}
+@keyframes blur-in-expand{
+  0%{
+    transform:scale(0);
+    filter:blur(12px);
+    opacity:0
+  }
+  100%{
+    transform:scale(1);filter:blur(0);opacity:1
+  }
+}
+@keyframes rotar{
+  from{
+      transform: rotateY(0deg);
+  }
+  to{
+      transform: rotateY(-360deg);
+  }
+}
+
+@keyframes Animate {
+  from{
+      width: 16rem;
+      height: 16rem;
+  }
+  50%{
+      width: 12rem;
+      height: 12rem;
+  }
+  to{
+      width: 16rem;
+      height: 16rem;
+  }
+}
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 300px;
+    width: 80vw;
+  }
+
+  .logo {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+/* Media queries for even smaller screens */
+@media only screen and (max-width: 480px) {
+  .container {
+    height: 200px;
+    width: 90vw;
+  }
+
+  .logo {
+    width: 150px;
+    height: 200px;
+  }
+}
