@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'assets/data/spidermans.json'
+  baseUrl: 'http://spidermanapi.us-east-1.elasticbeanstalk.com/spidermans}';
 };
