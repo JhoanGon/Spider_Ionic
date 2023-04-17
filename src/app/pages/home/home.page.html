@@ -1,7 +1,6 @@
 <ion-header mode="md">
   <ion-toolbar>
     <ion-title>
-      <!-- <div>Ionic V7</div> -->
       <strong routerLink="/intro" style="cursor: pointer;">Spider-Man Multiverse</strong>
     </ion-title>
   </ion-toolbar>
@@ -10,11 +9,6 @@
 <ion-content mode="ios">
   <div class="glass-content">
     <ion-grid>
-      <!-- <ion-row>
-        <ion-col class="d-flex-center" size="12">
-          <ion-searchbar placeholder="Buscar" [(ngModel)] = "params.name" (ionInput)="searchCharacters()" [debounce]="250"></ion-searchbar>
-        </ion-col>
-      </ion-row> -->
       <ion-row>
         <ion-col routerLink="/character-detail/{{ c.id }}" *ngFor="let c of spiderData" sizeLg="6" sizeMd="6" sizeSm="12" size="12">
           <ion-card>
@@ -22,11 +16,11 @@
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="4" sizeMd="12" sizeSm="12" size="12">
                   <ion-avatar>
-                    <img [src]="c.img" />
+                    <img class="lazyload" [src]="c.img" />
                   </ion-avatar>
                 </ion-col>
                 <ion-col class="ion-padding" sizeLg="8" sizeMd="8" sizeSm="8" size="12">
-                  <div class="name">{{ c.name }}</div>
+                  <div class="name" [textContent]="c.name"></div>
                   <p>Alias: <br> <strong> {{ c.alias }} </strong></p>
                   <p>Tierra: <br> <strong> {{ c.earth }} </strong></p>
                   <p>Visto por primera vez: <br> <strong> {{ c.firstApparition }} </strong></p>
@@ -37,9 +31,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <!-- <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="getCharacters($event)">
-      <ion-infinite-scroll-content>
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll> -->
   </div>
 </ion-content>
+
