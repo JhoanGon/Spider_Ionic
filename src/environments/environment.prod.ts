@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://spidermanapi.us-east-1.elasticbeanstalk.com/spidermans'
+  baseUrl: 'https://spiderverse-384015.uk.r.appspot.com/spidermans'
 };

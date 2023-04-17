@@ -1,7 +1,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://spidermanapi.us-east-1.elasticbeanstalk.com/spidermans'
+  baseUrl: 'https://spiderverse-384015.uk.r.appspot.com/spidermans'
 };
 
 
