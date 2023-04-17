@@ -10,7 +10,7 @@ import { SpiderServiceService } from 'src/app/services/spider-service.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule,SharedModule]
+  imports: [IonicModule, CommonModule, FormsModule,SharedModule],
 })
 export class HomePage implements OnInit {
 
