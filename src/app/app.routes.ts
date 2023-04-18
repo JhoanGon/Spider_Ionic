@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
+import { LoginGuardGuard } from './guards/login-guard.guard';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'intro',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -17,5 +19,13 @@ export const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login/login.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'character-add',
+    loadChildren: () => import('./pages/character-add/character-add/character-add.module').then( m => m.HomePageModule), canActivate: [LoginGuardGuard]
   },
 ];

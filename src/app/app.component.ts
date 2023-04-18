@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -6,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, HttpClientModule],
+  providers: [HttpClientModule,HttpClient]
 })
 export class AppComponent {
   constructor() {}

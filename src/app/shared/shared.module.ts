@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { SpiderServiceService } from '../services/spider-service.service';
+import { AuthServiceService } from '../services/auth-service.service';
+import { LoginGuardGuard } from '../guards/login-guard.guard';
 
 
 
@@ -13,13 +15,16 @@ import { SpiderServiceService } from '../services/spider-service.service';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
   ],
   exports:[
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [
-    SpiderServiceService
+    SpiderServiceService,
+    AuthServiceService,
+    LoginGuardGuard
   ]
 })
 export class SharedModule { }
