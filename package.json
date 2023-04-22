@@ -25,9 +25,11 @@
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
     "@ionic/angular": "^7.0.0",
+    "aws-sdk": "^2.1363.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "xmldom": "^0.6.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

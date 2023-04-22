@@ -42,3 +42,6 @@
   color: lightblue;
   transform: translateY(-30px);
 }
+input:required:invalid {
+  border-color: red;
+}

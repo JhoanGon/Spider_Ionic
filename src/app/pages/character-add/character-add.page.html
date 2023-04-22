@@ -15,7 +15,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Nombre')" [(inputValue)]="nameValue" ngDefaultControl (inputValueChange)="nameValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Nombre')" [(inputValue)]="nameValue" ngDefaultControl (inputValueChange)="nameValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -28,7 +29,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Alias')" [(inputValue)]="aliasValue" ngDefaultControl (inputValueChange)="aliasValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Alias')" [(inputValue)]="aliasValue" ngDefaultControl (inputValueChange)="aliasValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -41,7 +43,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Tierra')" [(inputValue)]="earthValue" ngDefaultControl (inputValueChange)="earthValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Tierra')" [(inputValue)]="earthValue" ngDefaultControl (inputValueChange)="earthValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -54,7 +57,12 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Imagen')" [(inputValue)]="imgValue" ngDefaultControl (inputValueChange)="imgValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <!-- <app-input [inputPlaceholder]="splitWord('Imagen')" [(inputValue)]="imgValue" ngDefaultControl (inputValueChange)="imgValue" required></app-input> -->
+                  <ion-item>
+                    <ion-label position="stacked">Imagen</ion-label>
+                    <input type="file" (change)="onFileSelected($event)">
+                  </ion-item>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -67,7 +75,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Visto por primera vez')" [(inputValue)]="firstApparitionValue" ngDefaultControl (inputValueChange)="firstApparitionValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Visto por primera vez')" [(inputValue)]="firstApparitionValue" ngDefaultControl (inputValueChange)="firstApparitionValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -80,7 +89,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Ocupación')" [(inputValue)]="occupationValue" ngDefaultControl (inputValueChange)="occupationValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Ocupación')" [(inputValue)]="occupationValue" ngDefaultControl (inputValueChange)="occupationValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -93,7 +103,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Género')" [(inputValue)]="genderValue" ngDefaultControl (inputValueChange)="genderValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Género')" [(inputValue)]="genderValue" ngDefaultControl (inputValueChange)="genderValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -106,7 +117,8 @@
             <ion-grid>
               <ion-row>
                 <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                  <app-input [inputPlaceholder]="splitWord('Raza')" [(inputValue)]="raceValue" ngDefaultControl (inputValueChange)="raceValue"></app-input>
+                  <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                  <app-input [inputPlaceholder]="splitWord('Raza')" [(inputValue)]="raceValue" ngDefaultControl (inputValueChange)="raceValue" required></app-input>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -120,7 +132,8 @@
           <ion-grid>
             <ion-row>
               <ion-col class="ion-padding" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-                <app-input [inputPlaceholder]="splitWord('Descripción')" class="inputDescription" [(inputValue)]="descriptionValue" ngDefaultControl (inputValueChange)="descriptionValue"></app-input>
+                <div class="contentIcon"><ion-icon class="iconDanger" *ngIf="!isValid" name="alert-circle-outline" color="danger" style="width: 30px;"></ion-icon></div>
+                <app-input [inputPlaceholder]="splitWord('Descripción')" class="inputDescription" [(inputValue)]="descriptionValue" ngDefaultControl (inputValueChange)="descriptionValue" required></app-input>
               </ion-col>
             </ion-row>
           </ion-grid>
