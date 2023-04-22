@@ -30,3 +30,13 @@ ion-card{
   display: flex;
   justify-content: end;
 }
+@media screen and (max-width: 768px) {
+  .custom-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cambia a 2 columnas según el ancho */
+    padding-left: 2%;
+  }
+
+  .description {
+    padding-left: 2%;
+  }
+}

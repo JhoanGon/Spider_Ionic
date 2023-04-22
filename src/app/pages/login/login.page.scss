@@ -1,16 +1,16 @@
 ion-content {
- // --ion-background-color: rgba(13, 32, 68, 0.925);
+  // --ion-background-color: rgba(13, 32, 68, 0.925);
   --ion-background-color: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.loader{
+.loader {
   display: flex;
   justify-content: center;
   z-index: 1;
 }
-.login{
+.login {
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -24,7 +24,7 @@ ion-content {
   padding-bottom: 0.4em;
   background-color: #171717;
   border-radius: 25px;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   width: 400px;
   height: 500px;
 }
@@ -84,7 +84,7 @@ ion-content {
   margin-right: 0.5em;
   border: none;
   outline: none;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   background-color: #252525;
   color: white;
 }
@@ -101,7 +101,7 @@ ion-content {
   border-radius: 5px;
   border: none;
   outline: none;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   background-color: #252525;
   color: white;
 }
@@ -117,7 +117,7 @@ ion-content {
   border-radius: 5px;
   border: none;
   outline: none;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   background-color: #252525;
   color: white;
 }
@@ -126,7 +126,36 @@ ion-content {
   background-color: red;
   color: white;
 }
-:host ::ng-deep .alert-wrapper.sc-ion-alert-md{
+:host ::ng-deep .alert-wrapper.sc-ion-alert-md {
   width: 1000px;
   background: aqua;
+}
+@media only screen and (max-width: 768px) {
+  .form {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .form {
+    width: 90%;
+    height: auto;
+  }
+
+  #heading {
+    font-size: 1em;
+  }
+
+  .button1 {
+    padding: 0.4em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+  }
+
+  .button2 {
+    padding: 0.4em;
+    padding-left: 1.6em;
+    padding-right: 1.6em;
+  }
 }
