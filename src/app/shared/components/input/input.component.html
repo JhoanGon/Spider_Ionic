@@ -1,0 +1,7 @@
+<div class="form-control">
+  <textarea type="text" required="" (ngModelChange)="onInputChange()" [(ngModel)]="inputValue"></textarea>
+  <label>
+    <span *ngFor="let char of inputPlaceholder; let i = index" [ngStyle]="{'transition-delay': i*50+'ms' }">{{char}}</span>
+  </label>
+</div>
+

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomePageModule } from './login/login.module';
-import { SpiderServiceService } from 'src/app/services/spider-service.service';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 
 interface Login {
   user: string;
@@ -22,9 +21,30 @@ export class LoginPage implements OnInit {
   userInfo: Login = { user: '', password: '' };
   logginIn: boolean = false;
 
-  constructor(private spiderService: SpiderServiceService, private router: Router, private authService: AuthServiceService, private http:HttpClient, private httpModule: HttpClientModule) { }
+  constructor(private router: Router, public authService: AuthServiceService, private http:HttpClient, private httpModule: HttpClientModule,
+    private alertController: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async confirmAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: ' ',
+      message: 'Bienvenido',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
+  async errorAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: ' ',
+      message: 'Contraseña o usuario incorrecto',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 
   loginUser() {
@@ -34,12 +54,11 @@ export class LoginPage implements OnInit {
     this.authService.login(this.userInfo).subscribe(
       (res) => {
         if(res){
-          //this.router.navigateByUrl('/character-add');
+          this.confirmAlert();
           this.router.navigate(['/character-add']);
-          alert("No hubo error")
           sessionStorage.setItem('isLoggedIn', 'true');
         }else{
-          alert("Contraseña o usuario incorrecto");
+          this.errorAlert();
           console.log(res);
           sessionStorage.setItem('isLoggedIn', 'false');
         }

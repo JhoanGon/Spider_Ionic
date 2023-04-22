@@ -14,6 +14,8 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+$theme-ios: true;
+$theme-md: false;
 
 .glass-content {
     background: rgba(19, 63, 176, 0.27);
@@ -68,6 +70,45 @@ ion-item {
 
 ion-icon {
     color: white;
+}
+.alert-wrapper.sc-ion-alert-md{
+  background: #ffffff;
+  min-width: 280px;
+  min-height: 400px;
+  margin-bottom: 100px;
+  border-radius: 20px;
+}
+.alert-head.sc-ion-alert-md{
+  text-align: center;
+}
+.alert-title.sc-ion-alert-md{
+  font-size: 30px;
+  margin-top: 20px;
+}
+.alert-head.sc-ion-alert-md+.alert-message.sc-ion-alert-md{
+  text-align: center;
+}
+.alert-message.sc-ion-alert-md{
+  font-size: 25px;
+}
+.alert-sub-title.sc-ion-alert-md{
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5372/5372211.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 20%;
+}
+
+.alert-sub-title.sc-ion-alert-md{
+  height: 150px;
+}
+
+.alert-button-group.sc-ion-alert-md{
+  justify-content: center;
+}
+
+.alert-button-inner.sc-ion-alert-md{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .loader {

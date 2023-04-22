@@ -27,20 +27,10 @@ export class SpiderServiceService {
       );
   }
 
-  // login(user: User): Observable<boolean> {
-  //   const headers = new HttpHeaders().set('Content-Type', 'application/json');
-  //   return this.http.post<any>(`${environment.baseUrl + environment.login}`, user, { headers })
-  //     .pipe(
-  //       map(response => {
-  //         if (response.success) {
-  //           this.loggedIn = true;
-  //           return true;
-  //         } else {
-  //           this.loggedIn = false;
-  //           return false;
-  //         }
-  //       })
-  //     );
-  // }
+  postSpider(newSpider: any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this.http.post(environment.baseUrl + environment.spidermans + environment.addCharacter, newSpider, { headers });
+  }
 
 }
