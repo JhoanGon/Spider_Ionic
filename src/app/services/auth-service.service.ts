@@ -21,25 +21,27 @@ export class AuthServiceService {
 
   private isLoggedIn = false;
   private token?: string;
+  loading: boolean = false;
 
   constructor(private http: HttpClient, private httpModule: HttpClientModule) {}
 
   login(user: User): Observable<boolean> {
-  const headers = new HttpHeaders().set('Content-Type', 'application/json');
-  return this.http.post<any>(`${environment.baseUrl + environment.login}`, user, { headers })
-  .pipe(
-  map(response => {
-  if (response.success) {
-        this.isLoggedIn = true;
-        console.log(this.isLoggedIn);
-        return true;
-      } else {
-        this.isLoggedIn = false;
-        console.log(this.isLoggedIn);
-        return false;
-      }
-    })
-  );
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    this.loading = true;
+    return this.http.post<any>(`${environment.baseUrl + environment.login}`, user, { headers })
+    .pipe(
+    map(response => {
+    if (response.success) {
+          this.isLoggedIn = true;
+          this.loading = false;
+          return true;
+        } else {
+          this.isLoggedIn = false;
+          this.loading = false;
+          return false;
+        }
+      })
+    );
   }
 
   logout(): void {

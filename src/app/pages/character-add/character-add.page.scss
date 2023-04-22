@@ -1,0 +1,22 @@
+.custom-grid {
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea 3 columnas iguales */
+  grid-gap: 5px; /* Agrega un espacio entre las celdas */
+  padding-top: 50px;
+  //padding-left: 200px;
+  padding-left: 17%;
+}
+ion-card{
+  width: 100%;
+}
+.description{
+  margin: 0 auto;
+  padding-left: 17%;
+}
+.btnSave{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+

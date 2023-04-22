@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomePageModule } from './character-add/character-add.module';
 import { SpiderServiceService } from 'src/app/services/spider-service.service';
 import { HttpClient } from '@angular/common/http';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
@@ -11,9 +10,43 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 })
 export class CharacterAddPage implements OnInit {
 
-  constructor(private spiderService: SpiderServiceService, private http: HttpClient, private authService: AuthServiceService) { }
+  nameValue: string;
+  aliasValue: string;
+  earthValue: string;
+  imgValue: string;
+  firstApparitionValue: string;
+  occupationValue: string;
+  genderValue: string;
+  raceValue: string;
+  descriptionValue: string;
 
-  ngOnInit() {
+  constructor(private spiderService: SpiderServiceService, private http: HttpClient, public authService: AuthServiceService) {}
+
+  ngOnInit() {}
+
+  splitWord(word: string): string[] {
+    return word.split('');
+  }
+
+  onSubmit() {
+    //console.log(this.nameValue);
+    const newSpider = {
+      name: this.nameValue,
+      alias: this.aliasValue,
+      earth: this.earthValue,
+      img: this.imgValue,
+      firstApparition: this.firstApparitionValue,
+      occupation: this.occupationValue,
+      gender: this.genderValue,
+      race: this.raceValue,
+      description: this.descriptionValue
+    };
+
+    console.log(newSpider);
+
+    this.spiderService.postSpider(newSpider).subscribe((response) => {
+      console.log(response);
+    });
   }
 
 }

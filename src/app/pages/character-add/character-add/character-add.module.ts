@@ -8,18 +8,30 @@ import { CharacterAddPage } from '../character-add.page';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: CharacterAddPage
-  }
+    component: CharacterAddPage,
+  },
 ];
 
 @NgModule({
   declarations: [CharacterAddPage],
-  imports: [IonicModule, CommonModule, FormsModule, SharedModule, RouterModule.forChild(routes), HttpClientModule],
-  exports: [IonicModule, CommonModule, FormsModule,SharedModule,HttpClientModule],
-  providers: [AuthServiceService]
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    HttpClientModule
+  ],
+  exports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    HttpClientModule,
+  ],
+  providers: [AuthServiceService],
 })
 export class HomePageModule {}

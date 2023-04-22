@@ -1,130 +1,132 @@
 ion-content {
-  --ion-background-color: rgb(79, 14, 233);
-  --color: rgb(255, 255, 255);
+ // --ion-background-color: rgba(13, 32, 68, 0.925);
+  --ion-background-color: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  z-index: 1;
 }
 .login{
   display: flex;
   justify-content: center;
   margin-top: 100px;
 }
-.form-container {
-  width: 800px;
-  border-radius: 0.75rem;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 3rem;
-  color: rgba(243, 244, 246, 1);
-}
-
-.title {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
 .form {
-  margin-top: 1.5rem;
-}
-
-.input-group {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.input-group label {
-  display: block;
-  color: rgba(156, 163, 175, 1);
-  margin-bottom: 4px;
-}
-
-.input-group input {
-  width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid rgba(55, 65, 81, 1);
-  outline: 0;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 0.75rem 1rem;
-  color: rgba(243, 244, 246, 1);
-}
-
-.input-group input:focus {
-  border-color: rgba(167, 139, 250);
-}
-
-.forgot {
   display: flex;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175,1);
-  margin: 8px 0 14px 0;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+  width: 400px;
+  height: 500px;
 }
 
-.forgot a,.signup a {
-  color: rgba(243, 244, 246, 1);
-  text-decoration: none;
-  font-size: 14px;
+.form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
 }
 
-.forgot a:hover, .signup a:hover {
-  text-decoration: underline rgba(167, 139, 250, 1);
-}
-
-.sign {
-  display: block;
-  width: 100%;
-  background-color: rgba(167, 139, 250, 1);
-  padding: 0.75rem;
+#heading {
   text-align: center;
-  color: rgba(17, 24, 39, 1);
-  border: none;
-  border-radius: 0.375rem;
-  font-weight: 600;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
 }
 
-.social-message {
+.field {
   display: flex;
   align-items: center;
-  padding-top: 1rem;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
-.line {
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(55, 65, 81, 1);
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
 }
 
-.social-message .message {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: rgba(156, 163, 175, 1);
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
 }
 
-.social-icons {
+.form .btn {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
 }
 
-.social-icons .icon {
-  border-radius: 0.125rem;
-  padding: 0.75rem;
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
   border: none;
-  background-color: transparent;
-  margin-left: 8px;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
 }
 
-.social-icons .icon svg {
-  height: 1.25rem;
-  width: 1.25rem;
-  fill: #fff;
+.button1:hover {
+  background-color: rgba(13, 32, 68, 0.925);
+  color: white;
 }
 
-.signup {
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175, 1);
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+:host ::ng-deep .alert-wrapper.sc-ion-alert-md{
+  width: 1000px;
+  background: aqua;
 }
